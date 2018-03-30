@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CryptoLink App</title>
+
+    <!-- Bootstrap and local CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/libraries/chartist/chartist.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CryptoLink</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+
+                <a class="nav-item nav-link" id="portfolio" href="cryptofolioPage.html">Portfolio</a>
+
+            </div>
+        </div>
+        <div class="form-inline my-2 my-lg-0 d-none" id="loggedin">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success ml-2 my-sm-0" type="submit" id="logout">Logout</button>
+        </div>
+        <div class="form-inline my-2 my-lg-0 text-white" id="loggedout">
+            <label for="user">Username</label>
+            <input class="form-control mx-1 mb-2" type="email" placeholder="Enter email" aria-label="user" id="user">
+            <label for="password">Password</label>
+            <input class="form-control mx-1" type="password" placeholder="Password" aria-label="password" id="pass">
+            <button class="btn btn-outline-success ml-1 my-2" type="submit" id="login">Log In</button>
+            <button class="btn btn-outline-success ml-2 my-2" type="submit" id="signup">Signup</button>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-white text-center mb-0">
+        <div class="container">
+            <h1 class="display-1">CryptoLink</h1>
+            <p class="lead">Something or other. Here are your Cryptos...</p>
+        </div>
+    </div>
+    
+    <div class="dropdown text-right my-3 mr-3">
+        <button class="btn btn-primary dropdown-togglet" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Sort By
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Market Cap</a>
+            <a class="dropdown-item" href="#">Price</a>
+            <a class="dropdown-item" href="#">24-hour Change</a>
+        </div>
+    </div>
+
+    <div class="container text-muted">
+
+        <!-- cards -->
+
+        <div class="row" id="cryptoSpace">
+
+        </div>
+
+        <!-- navs -->
+
+        <h2 class="display-4 py-5 mt-5 text-center">Some More information</h2>
+
+        <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+            <a class="nav-link active" href="#link1" data-toggle="tab">Link 1</a>
+            <a class="nav-link" href="#link2" data-toggle="tab">Link 2</a>
+            <a class="nav-link" href="#link3" data-toggle="tab">Link 3</a>
+            <a class="nav-link" href="#link4" data-toggle="tab">Link 4</a>
+        </nav>
+
+        <div class="tab-content py-5">
+            <div class="tab-pane active" id="link1">
+                <h3>Link 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+            </div>
+            <div class="tab-pane fade" id="link2">
+                <h3>Link 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+            </div>
+            <div class="tab-pane fade" id="link3">
+                <h3>Link 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+            </div>
+            <div class="tab-pane fade" id="link4">
+                <h3>Link 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ipsum nec mi vestibulum aliquam suscipit
+                    et ipsum. Duis ut aliquam leo.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- end .container -->
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS, then Firebase, then local -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="assets/libraries/chartist/chartist.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+</body>
+
+</html>
+
+
+<!-- <body>
+    <div id="coinPrice" class="jumbotron bg-dark text-white text-center container"></div>
+    <div class="container form-group" id="coinSearchForm">
+        <label for="coinInput">Search Coin</label>
+        <input class="form-control" type="text" id="coinInput">
+        <br>
+        <input type="submit" id="addCoin" class="form-control btn btn-success" value="Add Button">
+        <br>
+        <br>
+        <button class="btn btn-success btn-lg float-right" id="logout">Logout</button>
+    </div>
+
+
+    <div id="coinButtonView"></div>
+
+    <script src="assets/javascript/logic.js"></script>
+</body>
+
+</html> -->

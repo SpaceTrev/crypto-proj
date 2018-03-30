@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CryptoLink App</title>
+
+    <!-- Bootstrap and local CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CryptoLink</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+
+                <a class="nav-item nav-link active" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link" id="portfolio" href="cryptofolioPage.html">Portfolio</a>
+                
+            </div>
+        </div>
+        <div class="form-inline my-2 my-lg-0 d-none" id="loggedin">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success ml-2 my-sm-0" type="submit" id="logout">Logout</button>
+        </div>
+        <div class="form-inline my-2 my-lg-0 text-white" id="loggedout">
+            <label for="user">Username</label>
+            <input class="form-control mx-1 mb-2" type="email" placeholder="Enter email" aria-label="user" id="user">
+            <label for="password">Password</label>
+            <input class="form-control mx-1" type="password" placeholder="Password" aria-label="password" id="pass">
+            <button class="btn btn-outline-success ml-1 my-2" type="submit" id="login">Log In</button>
+            <button class="btn btn-outline-success ml-2 my-2" type="submit" id="signup">Signup</button>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-white text-center mb-0">
+        <div class="container">
+            <h1 class="display-1">CryptoLink</h1>
+            <p class="lead">Something or other. Here are your Cryptos...</p>
+        </div>
+    </div>
+
+    <div class="container text-muted">
+        <h2 class="text-muted display-4 py-5 mt-5 text-center">Your Cryptos</h2>
+        <div class="container" id="portfolioCryptoSpace">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Crypto</th>
+                        <th scope="col">Price USD:</th>
+                        <th scope="col">Market Cap</th>
+                        <th scope="col">Ammount</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">24 Hour Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- end .container -->
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS, the Firebase, Then local -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+</body>
+
+</html>
