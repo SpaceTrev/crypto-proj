@@ -80,9 +80,9 @@ function createButtons() {
                     // console.log(data.DISPLAY[name]);
                     var showBtn;
                     // console.log(cryptos);
-                    if (checkIfinPortfolio(nameId)){
+                    if (checkIfinPortfolio(nameId)) {
                         showBtn = `<button class="btn btn-outline-success ml-2" type="submit" id="addPortfolio" data-name='${nameId}'>In Portfolio</button>`
-                    }else{
+                    } else {
                         showBtn = `<button class="btn btn-outline-success ml-2" type="submit" id="addPortfolio" data-name='${nameId}'>Add to Portfolio</button>`
                     }
                     console.log(marketCap);
@@ -113,73 +113,73 @@ function createButtons() {
         `)
                 }
             });
-        }
     }
+}
 function chartGeneration(name) {
-    var chartQueryURL = "https://min-api.cryptocompare.com/data/histoday?fsym="+name+"&tsym=USD&limit=10&aggregate=3&e=CCCAGG";
+    var chartQueryURL = "https://min-api.cryptocompare.com/data/histoday?fsym=" + name + "&tsym=USD&limit=10&aggregate=3&e=CCCAGG";
     var timeses;
-        $.ajax({
-            url: chartQueryURL,
-            method: "GET"
-        }).then(function (data) {
-            var dateString = moment(timeConvert)._d;
-            var iterationObject = Object.keys(data.Data)
-            var time = data.Data[0].time;
-            var timeConvert = time.toString();
-            console.log(data.Data);
-            for (var i = 0; i < iterationObject.length; i++) {
-                timeses = data.Data[i].time;
-                var convertedAf = moment.unix(timeses)._d;
-                var highPrices = data.Data[i].high;
-                var closePrices = data.Data[i].close;
-                var lowPrices = data.Data[i].low;
-                var volumeFrom = data.Data[i].volumefrom;
-                var volumeTo = data.Data[i].volumeto;
-                // console.log(highPrices, "highPrices");
-                // console.log(lowPrices, "lowPrices");
-                // console.log(closePrices, "closePrices");
-                // console.log(volumeFrom, "volumeFrom");
-                // console.log(volumeTo, "volumeTo");
-                // console.log(convertedAf, "times");
-            }
-            var chartData = {
-                // A labels array that can contain any sort of values
-                labels: [],
-                // Our series array that contains series objects or in this case series data arrays
-                series: [
-                    [data.Data[0].high, data.Data[1].high, data.Data[2].high,
-                    data.Data[3].high, data.Data[4].high, data.Data[5].high,
-                    data.Data[6].high, data.Data[7].high, data.Data[8].high,
-                    data.Data[9].high, data.Data[10].high]
-                ],
-                height: 150,
-                width: 215
+    $.ajax({
+        url: chartQueryURL,
+        method: "GET"
+    }).then(function (data) {
+        var dateString = moment(timeConvert)._d;
+        var iterationObject = Object.keys(data.Data)
+        var time = data.Data[0].time;
+        var timeConvert = time.toString();
+        console.log(data.Data);
+        for (var i = 0; i < iterationObject.length; i++) {
+            timeses = data.Data[i].time;
+            var convertedAf = moment.unix(timeses)._d;
+            var highPrices = data.Data[i].high;
+            var closePrices = data.Data[i].close;
+            var lowPrices = data.Data[i].low;
+            var volumeFrom = data.Data[i].volumefrom;
+            var volumeTo = data.Data[i].volumeto;
+            // console.log(highPrices, "highPrices");
+            // console.log(lowPrices, "lowPrices");
+            // console.log(closePrices, "closePrices");
+            // console.log(volumeFrom, "volumeFrom");
+            // console.log(volumeTo, "volumeTo");
+            // console.log(convertedAf, "times");
+        }
+        var chartData = {
+            // A labels array that can contain any sort of values
+            labels: [],
+            // Our series array that contains series objects or in this case series data arrays
+            series: [
+                [data.Data[0].high, data.Data[1].high, data.Data[2].high,
+                data.Data[3].high, data.Data[4].high, data.Data[5].high,
+                data.Data[6].high, data.Data[7].high, data.Data[8].high,
+                data.Data[9].high, data.Data[10].high]
+            ],
+            height: 150,
+            width: 215
 
-            };
-            var removeLabels = {
+        };
+        var removeLabels = {
 
+            showLabel: false,
+            axisX: {
                 showLabel: false,
-                axisX: {
-                    showLabel: false,
-                    showGrid: false,
+                showGrid: false,
 
-                },
-                axisY: {
-                    showLabel: false,
-                    showGrid: false,
+            },
+            axisY: {
+                showLabel: false,
+                showGrid: false,
 
-                }, 
-                height: 150,
-                width: 215,
-            }
+            },
+            height: 150,
+            width: 215,
+        }
 
-            // Create a new line chart object where as first parameter we pass in a selector
-            // that is resolving to our chart container element. The Second parameter
-            // is the actual data object.
-            return new Chartist.Line(`#${name}`, chartData, removeLabels);
-            console.log(removeLabels);
-        })
-    }
+        // Create a new line chart object where as first parameter we pass in a selector
+        // that is resolving to our chart container element. The Second parameter
+        // is the actual data object.
+        return new Chartist.Line(`#${name}`, chartData, removeLabels);
+        console.log(removeLabels);
+    })
+}
 
 function roundToTwo(num) {
     return +(Math.round(num + "e+2") + "e-2");
@@ -213,17 +213,33 @@ function createSavedButtons(name) {
                    <th scope="row">${nameId}</th>
                    <td>${coinPrice}</td>
                    <td>${marketCap}</td>
-                   <td><input> <button class='btn btn-success'>Submit</button></input></td>
-                   <td>To be Announced</td>
+                   <td class='${nameId}'><input type='number' id="${nameId}"> <button id=${nameId} type='submit' class='btn btn-success'>Submit</button></input></td>
+                   <td class='value'></td>
                    <td><span class="${colorPrice}">${priceChangePct}%</span> <span class="${textColor}">${priceChange}$</span></td>
                </tr>
        
        `);
-     })
+            $(document).on(`click`, `.btn-success`, function (event) {
+                event.preventDefault();
+                var ammountInput = $(`#${nameId}`).val();
+                var removedDollarSign = coinPrice.replace(/\$/g, '');
+                console.log(removedDollarSign);
+                if (ammountInput) {
+                    $(`.${nameId}`).html(ammountInput);
+                    console.log(ammountInput);
+                    var value = removedDollarSign * ammountInput;
+                    console.log(coinPrice);
+                    console.log(value);
+                    $(".value").html(value);
+                }
+
+            })
+
+        })
 }
 
 var nameArray = [];
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         database.ref(`users/${user.uid}/cryptos`).on('value', function (snapshot) {
             var cryptos = snapshot.val();
@@ -241,11 +257,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 
-function checkIfinPortfolio(name){
+function checkIfinPortfolio(name) {
     return nameArray.includes(name);
 }
 
-function cryptoInPortfolio(){
+function cryptoInPortfolio() {
     return nameArray;
 }
 
@@ -260,7 +276,7 @@ function coinToPortfolio(name) {
         nameArray.push(snapshot.val().name);
 
     });
-    if (nameArray.indexOf(coinName)<0){
+    if (nameArray.indexOf(coinName) < 0) {
         database.ref(`users/${firebase.auth().currentUser.uid}/cryptos`).push({
             name: coinName
         })
