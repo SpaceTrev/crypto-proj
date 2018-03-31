@@ -42,4 +42,5 @@ body {
 
 .ct-series-a .ct-point {
     stroke: green;
+    stroke-width: 7px;
 }

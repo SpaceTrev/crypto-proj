@@ -152,8 +152,8 @@ function chartGeneration(name) {
                     data.Data[6].high, data.Data[7].high, data.Data[8].high,
                     data.Data[9].high, data.Data[10].high]
                 ],
-                height: 100,
-                width: 240
+                height: 150,
+                width: 215
 
             };
             var removeLabels = {
@@ -169,8 +169,8 @@ function chartGeneration(name) {
                     showGrid: false,
 
                 }, 
-                height: 100,
-                width: 240,
+                height: 150,
+                width: 215,
             }
 
             // Create a new line chart object where as first parameter we pass in a selector
