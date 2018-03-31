@@ -135,12 +135,12 @@ function chartGeneration(name) {
             var lowPrices = data.Data[i].low;
             var volumeFrom = data.Data[i].volumefrom;
             var volumeTo = data.Data[i].volumeto;
-            // console.log(highPrices, "highPrices");
-            // console.log(lowPrices, "lowPrices");
-            // console.log(closePrices, "closePrices");
-            // console.log(volumeFrom, "volumeFrom");
-            // console.log(volumeTo, "volumeTo");
-            // console.log(convertedAf, "times");
+            console.log(highPrices, "highPrices");
+            console.log(lowPrices, "lowPrices");
+            console.log(closePrices, "closePrices");
+            console.log(volumeFrom, "volumeFrom");
+            console.log(volumeTo, "volumeTo");
+            console.log(convertedAf, "times");
         }
         var chartData = {
             // A labels array that can contain any sort of values
