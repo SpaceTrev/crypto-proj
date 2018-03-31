@@ -68,7 +68,7 @@ function createButtons() {
         })
             .then(function (data) {
                 for (var name in data.DISPLAY) {
-                    console.log(data)
+                    // console.log(data)
                     var colorPrice;
                     var textColor;
                     var marketCap = data.DISPLAY[name].USD.MKTCAP;
@@ -85,9 +85,9 @@ function createButtons() {
                     } else {
                         showBtn = `<button class="btn btn-outline-success ml-2" type="submit" id="addPortfolio" data-name='${nameId}'>Add to Portfolio</button>`
                     }
-                    console.log(marketCap);
-                    console.log(coinPrice);
-                    console.log(priceChange);
+                    // console.log(marketCap);
+                    // console.log(coinPrice);
+                    // console.log(priceChange);
                     if (priceChangePct < 0) {
                         colorPrice = "redPrice";
                         textColor = "redColor";
@@ -126,7 +126,7 @@ function chartGeneration(name) {
         var iterationObject = Object.keys(data.Data)
         var time = data.Data[0].time;
         var timeConvert = time.toString();
-        console.log(data.Data);
+        // console.log(data.Data);
         for (var i = 0; i < iterationObject.length; i++) {
             timeses = data.Data[i].time;
             var convertedAf = moment.unix(timeses)._d;
@@ -177,7 +177,7 @@ function chartGeneration(name) {
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
         return new Chartist.Line(`#${name}`, chartData, removeLabels);
-        console.log(removeLabels);
+        // console.log(removeLabels);
     })
 }
 
@@ -223,13 +223,13 @@ function createSavedButtons(name) {
                 event.preventDefault();
                 var ammountInput = $(`#${nameId}`).val();
                 var removedDollarSign = coinPrice.replace(/\$/g, '');
-                console.log(removedDollarSign);
+                // console.log(removedDollarSign);
                 if (ammountInput) {
                     $(`.${nameId}`).html(ammountInput);
-                    console.log(ammountInput);
+                    // console.log(ammountInput);
                     var value = removedDollarSign * ammountInput;
-                    console.log(coinPrice);
-                    console.log(value);
+                    // console.log(coinPrice);
+                    // console.log(value);
                     $(".value").html(value);
                 }
 
@@ -270,9 +270,9 @@ function coinToPortfolio(name) {
     $(this).text("In Portfolio");
     var coinName = $(this).attr("data-name");
     var nameArray = [];
-    console.log(firebase.auth().currentUser.uid);
+    // console.log(firebase.auth().currentUser.uid);
     database.ref(`users/${firebase.auth().currentUser.uid}/cryptos`).on('child_added', function (snapshot) {
-        console.log(snapshot.val().name);
+        // console.log(snapshot.val().name);
         nameArray.push(snapshot.val().name);
 
     });
@@ -285,7 +285,7 @@ function coinToPortfolio(name) {
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         database.ref(`users/${user.uid}/cryptos`).on('child_added', function (snapshot) {
-            console.log(snapshot.val().name);
+            // console.log(snapshot.val().name);
             createSavedButtons(snapshot.val().name);
 
         });
