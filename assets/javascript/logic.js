@@ -76,7 +76,7 @@ function createButtons() {
                     var nameId = name;
                     var chart = chartGeneration(nameId);
                     var priceChangePct = data.DISPLAY[name].USD.CHANGEPCT24HOUR;
-                    var priceChange = data.DISPLAY[name].USD.CHANGEPCTDAY;
+                    var priceChange = data.DISPLAY[name].USD.CHANGE24HOUR;
                     // console.log(data.DISPLAY[name]);
                     var showBtn;
                     // console.log(cryptos);
