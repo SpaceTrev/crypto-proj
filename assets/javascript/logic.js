@@ -223,11 +223,12 @@ function createSavedButtons(name) {
                 event.preventDefault();
                 var ammountInput = $(`#${nameId}`).val();
                 var removedDollarSign = coinPrice.replace(/\$/g, '');
+               var removeComma = removedDollarSign.replace(/\,/g,'')
                 // console.log(removedDollarSign);
                 if (ammountInput) {
                     $(`.${nameId}`).html(ammountInput);
                     // console.log(ammountInput);
-                    var value = removedDollarSign * ammountInput;
+                    var value = removeComma * ammountInput;
                     // console.log(coinPrice);
                     // console.log(value);
                     $(`.${nameId}1`).html(value);
