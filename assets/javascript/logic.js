@@ -214,7 +214,7 @@ function createSavedButtons(name) {
                    <td>${coinPrice}</td>
                    <td>${marketCap}</td>
                    <td class='${nameId}'><input type='number' id="${nameId}"> <button id=${nameId} type='submit' class='btn btn-success'>Submit</button></input></td>
-                   <td class='value'></td>
+                   <td class='${nameId}1'></td>
                    <td><span class="${colorPrice}">${priceChangePct}%</span> <span class="${textColor}">${priceChange}$</span></td>
                </tr>
        
@@ -230,7 +230,7 @@ function createSavedButtons(name) {
                     var value = removedDollarSign * ammountInput;
                     // console.log(coinPrice);
                     // console.log(value);
-                    $(".value").html(value);
+                    $(`.${nameId}1`).html(value);
                 }
 
             })
