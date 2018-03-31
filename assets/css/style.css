@@ -38,6 +38,7 @@ body {
 }
 .ct-series-a .ct-line {
     stroke: green;
+    stroke-width: 1.5px;
 }
 
 .ct-series-a .ct-point {
